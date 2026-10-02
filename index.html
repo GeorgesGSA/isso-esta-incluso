@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Kit Visual “Isso Está Incluso?” para decidir pedidos extras do cliente." name="description"/>
+<title>Kit Visual “Isso Está Incluso?” | Pedidos Extras</title>
+<style>
+:root{
+  --bg:#ffffff;
+  --soft:#f6f8f7;
+  --text:#111714;
+  --muted:#5c6862;
+  --green:#13a963;
+  --green-dark:#0b7c48;
+  --green-soft:#e9f8f0;
+  --line:#e2e8e5;
+  --dark:#0e1210;
+  --shadow:0 18px 50px rgba(17,23,20,.10);
+  --radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:var(--bg);line-height:1.5}
+img{max-width:100%;display:block}
+a{color:inherit}
+.topbar{padding:10px 18px;text-align:center;background:var(--dark);color:#fff;font-size:13px;font-weight:700;letter-spacing:.02em}
+.container{width:min(1180px,calc(100% - 40px));margin:0 auto}
+.section{padding:84px 0}
+.section-soft{background:var(--soft)}
+.section-dark{background:var(--dark);color:#fff}
+.hero{padding-top:72px}
+.hero-grid,.product-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:54px;align-items:center}
+.hero h1{font-size:clamp(42px,5.1vw,72px);line-height:1.03;letter-spacing:-.045em;margin:14px 0 24px}
+.hero h1 span{color:var(--green-dark)}
+.lead{font-size:21px;color:var(--muted);max-width:720px}.lead.small{font-size:18px}
+.eyebrow{display:inline-block;font-size:12px;font-weight:900;letter-spacing:.13em;color:var(--green-dark);text-transform:uppercase}
+.hero-media img,.product-media img{filter:drop-shadow(0 18px 34px rgba(14,18,16,.10))}
+.hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin:30px 0 18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:900;border-radius:14px;padding:16px 22px;transition:.2s transform,.2s box-shadow;cursor:pointer;border:0}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--green);color:#fff;box-shadow:0 12px 24px rgba(19,169,99,.24)}
+.microcopy{font-size:13px;color:var(--muted)}
+.hero-points{display:flex;gap:14px;flex-wrap:wrap;color:#334039;font-size:14px;font-weight:750}
+.section-heading{max-width:830px;margin-bottom:42px}.section-heading.center{text-align:center;margin-left:auto;margin-right:auto}.section-heading h2{font-size:clamp(34px,4vw,54px);line-height:1.07;letter-spacing:-.035em;margin:10px 0 14px}.section-heading p{font-size:18px;color:var(--muted);margin:0}.section-heading.light p{color:#b6c0bb}.section-heading.light .eyebrow{color:#66d9a2}
+.preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.preview-card{margin:0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:12px;box-shadow:var(--shadow);overflow:hidden}.preview-card img{border-radius:12px;aspect-ratio:3/4;object-fit:cover;object-position:top}.preview-card figcaption{text-align:center;font-weight:800;padding:12px 8px 4px}.preview-card.featured{transform:translateY(-8px);border-color:#bfead3}
+.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.benefit-card{padding:26px;border:1px solid var(--line);border-radius:22px;background:#fff}.benefit-card .icon{width:44px;height:44px;border-radius:12px;background:var(--green-soft);display:grid;place-items:center;color:var(--green-dark);font-weight:900}.benefit-card h3{font-size:20px;margin:18px 0 8px}.benefit-card p{margin:0;color:var(--muted)}
+.compare-wrap{max-width:960px}.compare-table{display:grid;grid-template-columns:1fr 1fr;border:1px solid #2d3430;border-radius:22px;overflow:hidden;background:#171c19}.compare-table>div{padding:17px 20px;border-bottom:1px solid #2d3430}.compare-table>div:nth-child(odd){border-right:1px solid #2d3430}.compare-head{font-weight:900;font-size:18px}.compare-head.muted{color:#aab3af}.compare-head.good{color:#73e0aa}.compare-table>div:nth-last-child(-n+2){border-bottom:0}
+.cta-strip{padding:48px 0}.cta-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:34px 38px;border-radius:26px;background:linear-gradient(135deg,#effbf5,#e6f8ee);border:1px solid #ccebd9}.cta-strip h2{font-size:32px;line-height:1.1;margin:8px 0 0}
+.ideal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.ideal-grid article{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}.ideal-grid strong{font-size:19px}.ideal-grid p{margin:8px 0 0;color:var(--muted)}
+.product-grid{grid-template-columns:.95fr 1.05fr}.receive-list{counter-reset:item;list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}.receive-list li{position:relative;padding:16px 16px 16px 58px;background:var(--soft);border-radius:16px;border:1px solid var(--line)}.receive-list li:before{counter-increment:item;content:counter(item);position:absolute;left:14px;top:14px;width:30px;height:30px;border-radius:9px;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:900}.receive-list strong{display:block}.receive-list span{display:block;color:var(--muted);font-size:14px;margin-top:3px}
+.bonus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.bonus-card{display:grid;grid-template-columns:46% 54%;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 12px 28px rgba(17,23,20,.06)}.bonus-card:last-child{grid-column:1/-1;grid-template-columns:35% 65%}.bonus-card img{width:100%;height:100%;object-fit:cover;object-position:center}.bonus-card>div{padding:24px}.bonus-card span{font-size:11px;color:var(--green-dark);font-weight:900;letter-spacing:.12em}.bonus-card h3{font-size:24px;line-height:1.1;margin:8px 0 12px}.bonus-card p{margin:0;color:var(--muted)}
+.plans-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:980px;margin:0 auto}.plan-card{position:relative;border:1px solid var(--line);border-radius:26px;background:#fff;overflow:hidden;box-shadow:var(--shadow)}.plan-featured{border:2px solid var(--green)}.best-value{position:absolute;top:14px;right:14px;z-index:2;background:var(--green);color:#fff;padding:9px 13px;border-radius:999px;font-size:11px;font-weight:950;letter-spacing:.07em}.plan-image{background:var(--soft);padding:12px}.plan-image img{border-radius:16px}.plan-body{padding:28px}.plan-label{font-size:12px;font-weight:950;letter-spacing:.12em;color:var(--green-dark)}.plan-body h3{font-size:28px;margin:8px 0 16px}.plan-body ul{padding-left:20px;color:var(--muted);min-height:128px}.plan-body li{margin:7px 0}.price{display:flex;flex-direction:column;margin:20px 0}.price small{color:var(--muted)}.price strong{font-size:42px;letter-spacing:-.035em}.plan-body .btn{width:100%}.secure-note{text-align:center;color:var(--muted);margin:22px 0 0}
+.guarantee{display:grid;grid-template-columns:150px 1fr;gap:32px;align-items:center;max-width:900px}.guarantee-badge{width:140px;height:140px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;font-size:50px;font-weight:950;line-height:.72;text-align:center;box-shadow:0 15px 30px rgba(19,169,99,.24)}.guarantee-badge small{font-size:16px}.guarantee h2{font-size:42px;margin:8px 0 10px}.guarantee p{font-size:18px;color:var(--muted);margin:0}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.steps-grid article{padding:26px;border-radius:20px;background:var(--soft);border:1px solid var(--line)}.steps-grid article>span{width:40px;height:40px;border-radius:12px;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:900}.steps-grid h3{margin:16px 0 6px}.steps-grid p{margin:0;color:var(--muted)}
+.faq-wrap{max-width:860px}.faq-list{display:grid;gap:10px}.faq-list details{border:1px solid #29302c;border-radius:16px;background:#151a17}.faq-list summary{cursor:pointer;font-weight:850;padding:18px 20px;list-style:none}.faq-list summary::-webkit-details-marker{display:none}.faq-list summary:after{content:'+';float:right;color:#70dda8;font-size:22px}.faq-list details[open] summary:after{content:'–'}.faq-list p{color:#c0c9c4;padding:0 20px 20px;margin:0}
+footer{padding:30px 0;background:#080b09;color:#aab4ae}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer-inner strong{color:#fff}.footer-inner nav{display:flex;gap:16px}.footer-inner a{text-decoration:none}
+@media(max-width:900px){.hero-grid,.product-grid{grid-template-columns:1fr}.hero-copy{text-align:center}.hero-actions{align-items:center}.hero-points{justify-content:center}.hero-media{max-width:680px;margin:0 auto}.preview-grid{grid-template-columns:repeat(2,1fr)}.benefit-grid{grid-template-columns:repeat(2,1fr)}.ideal-grid{grid-template-columns:repeat(2,1fr)}.bonus-grid{grid-template-columns:1fr}.bonus-card:last-child{grid-column:auto;grid-template-columns:46% 54%}.plans-grid{grid-template-columns:1fr;max-width:640px}.steps-grid{grid-template-columns:repeat(2,1fr)}.cta-strip-inner{flex-direction:column;text-align:center}.guarantee{grid-template-columns:1fr;text-align:center}.guarantee-badge{margin:0 auto}}
+@media(max-width:620px){.container{width:min(100% - 24px,1180px)}.section{padding:60px 0}.hero{padding-top:48px}.hero h1{font-size:40px}.lead{font-size:18px}.btn{width:100%;padding:16px}.preview-grid,.benefit-grid,.ideal-grid,.steps-grid{grid-template-columns:1fr}.bonus-card,.bonus-card:last-child{grid-template-columns:1fr}.bonus-card img{aspect-ratio:4/3}.compare-table{font-size:14px}.compare-table>div{padding:13px}.section-heading h2{font-size:36px}.cta-strip-inner{padding:28px 20px}.product-media{order:2}.price strong{font-size:36px}.footer-inner{justify-content:center;text-align:center}}
+
+
+/* ===== V2: melhorias aprovadas ===== */
+.hero h1 .hero-emphasis{
+  color:var(--green);
+  position:relative;
+  white-space:normal;
+}
+.decision-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:24px 0 2px;
+}
+.decision-chips span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:7px 12px;
+  border-radius:999px;
+  border:1px solid #d8e4de;
+  background:#f8faf9;
+  color:#405048;
+  font-size:12px;
+  font-weight:850;
+}
+.decision-chips span.highlight{
+  border-color:#bce8d1;
+  background:var(--green-soft);
+  color:var(--green-dark);
+}
+.bonus-value{
+  margin-top:16px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+  font-size:14px;
+  font-weight:800;
+  color:var(--muted);
+}
+.bonus-value s{
+  color:#8c9892;
+  margin:0 5px;
+  text-decoration-thickness:2px;
+}
+.bonus-value strong{
+  color:var(--green-dark);
+  font-size:16px;
+  letter-spacing:.035em;
+}
+.basic-upgrade-note{
+  margin:13px 2px 0;
+  color:#c83838;
+  font-size:13px;
+  line-height:1.45;
+  text-align:center;
+}
+.basic-upgrade-note strong{
+  font-weight:950;
+}
+.complete-list{
+  min-height:0 !important;
+}
+.complete-list li{
+  margin:6px 0;
+}
+.guarantee{
+  grid-template-columns:180px 1fr;
+}
+.guarantee-seal{
+  width:166px;
+  height:166px;
+  position:relative;
+  margin:auto;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at center,#fff 0 46%,transparent 47%),
+    linear-gradient(135deg,#0a7a47,#16b86e);
+  box-shadow:0 18px 36px rgba(19,169,99,.22);
+  border:5px solid #fff;
+  outline:2px solid #bfe8d2;
+}
+.guarantee-seal:before,
+.guarantee-seal:after{
+  content:"";
+  position:absolute;
+  background:var(--green-dark);
+  width:30px;
+  height:48px;
+  bottom:-28px;
+  z-index:-1;
+}
+.guarantee-seal:before{
+  left:44px;
+  transform:rotate(14deg);
+}
+.guarantee-seal:after{
+  right:44px;
+  transform:rotate(-14deg);
+}
+.guarantee-core{
+  position:absolute;
+  inset:31px;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:var(--green-dark);
+  line-height:.85;
+  background:#fff;
+  border:2px solid #d7eee2;
+}
+.guarantee-core strong{
+  font-size:48px;
+  letter-spacing:-.06em;
+}
+.guarantee-core small{
+  font-size:15px;
+  font-weight:950;
+  letter-spacing:.12em;
+  margin-top:7px;
+}
+.guarantee-ring-text{
+  position:absolute;
+  inset:0;
+  color:#fff;
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.12em;
+}
+.guarantee-ring-text span:first-child{
+  position:absolute;
+  top:14px;
+  left:50%;
+  transform:translateX(-50%);
+}
+.guarantee-ring-text span:last-child{
+  position:absolute;
+  bottom:14px;
+  left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap;
+}
+.footer-simple{
+  justify-content:center;
+  text-align:center;
+  column-gap:14px;
+}
+@media(max-width:900px){
+  .guarantee{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .decision-chips{justify-content:center}
+  .guarantee-seal{width:150px;height:150px}
+  .guarantee-core{inset:29px}
+  .guarantee-core strong{font-size:43px}
+}
+
+
+/* ===== V3: mobile-first, textos e mídia segura ===== */
+html,body{max-width:100%;overflow-x:hidden}
+.hero-grid,.product-grid,.preview-grid,.benefit-grid,.ideal-grid,.bonus-grid,.plans-grid,.steps-grid,
+.hero-copy,.hero-media,.product-media,.product-copy,.plan-card,.bonus-card{min-width:0}
+
+.hero-media img,
+.product-media img,
+.plan-image img,
+.preview-card img,
+.bonus-card img{
+  display:block;
+  width:100%;
+  max-width:100%;
+  margin-inline:auto;
+  height:auto;
+}
+.hero-media img,
+.product-media img{
+  max-height:560px;
+  object-fit:contain;
+  object-position:center;
+}
+.preview-card img{
+  aspect-ratio:3/4;
+  object-fit:contain;
+  object-position:top center;
+  background:#fff;
+}
+.plan-image img{
+  max-height:360px;
+  object-fit:contain;
+  object-position:center;
+}
+.bonus-card img{
+  height:100%;
+  max-height:340px;
+  object-fit:contain;
+  object-position:center;
+  background:var(--soft);
+}
+
+/* Legendas das páginas do kit */
+.preview-card figcaption{
+  text-align:center;
+  padding:13px 8px 7px;
+}
+.preview-card figcaption strong{
+  display:block;
+  font-size:15px;
+  line-height:1.25;
+  color:var(--text);
+}
+.preview-card figcaption span{
+  display:block;
+  margin-top:5px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.45;
+  font-weight:550;
+}
+
+/* Selo dourado de garantia */
+.guarantee-seal{
+  width:170px;
+  height:170px;
+  position:relative;
+  margin:auto;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 34% 24%,rgba(255,255,255,.62) 0 4%,transparent 5%),
+    conic-gradient(from 15deg,#8b5a08,#e4b73f,#fff0a6,#bb8216,#f4d56c,#8b5a08);
+  border:5px solid #fff;
+  outline:3px solid #e4bd56;
+  box-shadow:0 16px 34px rgba(133,90,10,.26);
+}
+.guarantee-seal:before,
+.guarantee-seal:after{
+  content:"";
+  position:absolute;
+  bottom:-26px;
+  width:38px;
+  height:56px;
+  background:linear-gradient(180deg,#d4a632,#8f610b);
+  z-index:-1;
+  border-radius:3px;
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 78%,0 100%);
+}
+.guarantee-seal:before{left:38px;transform:rotate(12deg)}
+.guarantee-seal:after{right:38px;transform:rotate(-12deg)}
+.guarantee-core{
+  position:absolute;
+  inset:30px;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:#7e5205;
+  line-height:.86;
+  background:linear-gradient(145deg,#fffdf6,#fff7d6);
+  border:4px double #d8ad40;
+  box-shadow:inset 0 0 0 4px rgba(255,255,255,.72);
+}
+.guarantee-core strong{
+  font-size:49px;
+  letter-spacing:-.06em;
+  text-shadow:0 1px 0 #fff;
+}
+.guarantee-core small{
+  font-size:15px;
+  font-weight:950;
+  letter-spacing:.13em;
+  margin-top:7px;
+}
+.guarantee-ring-text{
+  position:absolute;
+  inset:0;
+  color:#fff9dc;
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.14em;
+  text-shadow:0 1px 1px rgba(70,42,0,.45);
+}
+.guarantee-ring-text span:first-child{
+  position:absolute;
+  top:15px;
+  left:50%;
+  transform:translateX(-50%);
+}
+.guarantee-ring-text span:last-child{
+  position:absolute;
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap;
+}
+
+/* Mobile é a prioridade operacional */
+@media(max-width:620px){
+  .container{width:min(100% - 22px,1180px)}
+  .section{padding:52px 0}
+  .hero{padding-top:38px}
+  .hero h1{font-size:36px;line-height:1.05;margin-top:12px}
+  .eyebrow{font-size:10px;line-height:1.45}
+  .lead{font-size:17px;line-height:1.58}
+  .section-heading{margin-bottom:30px}
+  .section-heading h2{font-size:31px;line-height:1.1}
+  .section-heading p{font-size:16px}
+  .decision-chips{gap:7px;margin-top:20px}
+  .decision-chips span{font-size:11px;padding:6px 9px;min-height:32px}
+  .preview-card{border-radius:17px;padding:10px}
+  .preview-card.featured{transform:none}
+  .preview-card figcaption strong{font-size:15px}
+  .preview-card figcaption span{font-size:12px}
+  .plan-body{padding:22px 18px}
+  .plan-body h3{font-size:25px}
+  .complete-list li{margin:8px 0}
+  .guarantee{gap:24px}
+  .guarantee h2{font-size:34px}
+  .guarantee p{font-size:16px}
+  .guarantee-seal{width:152px;height:152px}
+  .guarantee-core{inset:27px}
+  .guarantee-core strong{font-size:43px}
+  .guarantee-core small{font-size:13px}
+  .guarantee-ring-text{font-size:8px}
+  .guarantee-ring-text span:first-child{top:13px}
+  .guarantee-ring-text span:last-child{bottom:13px}
+}
+@media(max-width:380px){
+  .hero h1{font-size:33px}
+  .section-heading h2{font-size:29px}
+}
+
+
+/* ===== V4 final: valor percebido + disclaimer ===== */
+.price-complete{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:3px;
+}
+.price-complete .bundle-value{
+  display:block;
+  font-size:12px;
+  line-height:1.35;
+  color:var(--muted);
+  font-weight:650;
+  letter-spacing:0;
+}
+.price-complete .bundle-value s{
+  color:#8d9993;
+  text-decoration-thickness:2px;
+  text-decoration-color:#a0aaa5;
+}
+.price-complete .current-price{
+  display:block;
+  font-size:31px;
+  line-height:1;
+  letter-spacing:-.04em;
+  color:var(--text);
+}
+.footer-simple{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+}
+.footer-disclaimer{
+  max-width:820px;
+  margin:8px auto 0;
+  color:#7f8a84;
+  font-size:9px;
+  line-height:1.5;
+  font-weight:450;
+  text-align:center;
+}
+@media(max-width:620px){
+  .price-complete .bundle-value{font-size:11px}
+  .price-complete .current-price{font-size:30px}
+  .footer-disclaimer{
+    font-size:8.5px;
+    line-height:1.5;
+    max-width:100%;
+  }
+}
+
+
+/* Deploy final: mídia responsiva sem recorte ou overflow */
+.hero-media img,.product-media img,.plan-image img,.bonus-card img,.preview-card img{max-width:100%;height:auto;object-fit:contain}
+@media(max-width:620px){.hero-media,.product-media,.plan-image,.bonus-card,.preview-card{max-width:100%;overflow:hidden}}
+</style>
+<link href="https://pay.wiapy.com" rel="preconnect"/></head>
+<body>
+
+<div class="topbar">Material digital • Compra segura • 30 dias de garantia</div>
+<main>
+<section class="hero section" id="inicio">
+<div class="container hero-grid">
+<div class="hero-copy">
+<span class="eyebrow">PARA QUEM LIDA COM PEDIDOS EXTRAS, AJUSTES E MUDANÇAS DE CLIENTES NO DIA A DIA</span>
+<h1>Seu cliente pediu <span>“só mais uma coisinha”?</span><br/>Veja se está incluso, se é exceção, se deve ser <span class="hero-emphasis">cobrado como extra</span> ou se já virou <span class="hero-emphasis">um novo trabalho</span>.</h1>
+<p class="lead">Com o <strong>Kit Visual “Isso Está Incluso?”</strong>, você recebe mapas, fichas e checklists para analisar o pedido, comparar com o que foi combinado e decidir o que fazer em seguida.</p>
+<div aria-label="Possíveis classificações do pedido" class="decision-chips">
+<span>Incluído</span>
+<span>Exceção</span>
+<span class="highlight">Cobrar como Extra</span>
+<span class="highlight">Novo Trabalho</span>
+</div>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#planos">QUERO PARAR DE DECIDIR NO IMPROVISO</a>
+<span class="microcopy">Acesso digital após a confirmação do pagamento</span>
+</div>
+<div aria-label="Principais características" class="hero-points">
+<span>✓ Visual e direto</span>
+<span>✓ Aplicação prática</span>
+<span>✓ Sem aulas longas</span>
+</div>
+</div>
+<div class="hero-media">
+<img alt="Mockup do Kit Visual “Isso Está Incluso?”" fetchpriority="high" loading="eager" src="assets/isso-esta-incluso_mockup-hero.png"/>
+</div>
+</div>
+</section>
+<section class="section section-soft" id="demonstrativo">
+<div class="container">
+<div class="section-heading center">
+<span class="eyebrow">VEJA POR DENTRO</span>
+<h2>É um kit visual prático para consultar sempre que surgir um pedido extra e decidir com mais clareza o que entra, o que muda e como responder.</h2>
+<p>Veja algumas páginas do kit e como a decisão fica mais visual.</p>
+</div>
+<div class="preview-grid">
+<figure class="preview-card"><img alt="Página Como Usar Este Kit" loading="lazy" src="assets/isso-esta-incluso_preview-01_como-usar-este-kit.png"/><figcaption><strong>Como usar o kit</strong><span>Entenda a sequência para analisar cada novo pedido.</span></figcaption></figure>
+<figure class="preview-card featured"><img alt="Página Onde Esse Pedido Entra" loading="lazy" src="assets/isso-esta-incluso_preview-02_onde-esse-pedido-entra.png"/><figcaption><strong>Onde esse pedido entra?</strong><span>Classifique o pedido antes de decidir como agir.</span></figcaption></figure>
+<figure class="preview-card"><img alt="Página Pedidos Mais Comuns" loading="lazy" src="assets/isso-esta-incluso_preview-03_pedidos-mais-comuns.png"/><figcaption><strong>Pedidos mais comuns</strong><span>Consulte exemplos de situações que aparecem no dia a dia.</span></figcaption></figure>
+<figure class="preview-card"><img alt="Página O Que Mudou Nesse Pedido" loading="lazy" src="assets/isso-esta-incluso_preview-04_o-que-mudou-nesse-pedido.png"/><figcaption><strong>O que mudou no pedido?</strong><span>Identifique o que mudou em relação ao combinado.</span></figcaption></figure>
+<figure class="preview-card"><img alt="Página Checklist Antes de Responder" loading="lazy" src="assets/isso-esta-incluso_preview-05_checklist-antes-de-responder.png"/><figcaption><strong>Checklist antes de responder</strong><span>Revise os pontos essenciais antes de responder.</span></figcaption></figure>
+<figure class="preview-card"><img alt="Página Modelos de Resposta" loading="lazy" src="assets/isso-esta-incluso_preview-06_modelos-de-resposta.png"/><figcaption><strong>Modelos de resposta</strong><span>Adapte uma estrutura pronta para cada situação.</span></figcaption></figure>
+</div>
+</div>
+</section>
+<section class="section" id="beneficios">
+<div class="container">
+<div class="section-heading center">
+<span class="eyebrow">MAIS CLAREZA ANTES DE RESPONDER</span>
+<h2>Pare de aceitar pedidos extras no impulso</h2>
+</div>
+<div class="benefit-grid">
+<article class="benefit-card"><div class="icon">01</div><h3>Veja o que realmente mudou</h3><p>Tire o pedido do “é rapidinho” e enxergue o que ele exige de verdade.</p></article>
+<article class="benefit-card"><div class="icon">02</div><h3>Compare com o combinado</h3><p>Entenda se aquilo já fazia parte da entrega ou adicionou trabalho novo.</p></article>
+<article class="benefit-card"><div class="icon">03</div><h3>Veja o impacto antes de dizer sim</h3><p>Prazo, volume, nova criação, retrabalho e outros pontos ficam visíveis.</p></article>
+<article class="benefit-card"><div class="icon">04</div><h3>Saiba o que fazer em seguida</h3><p>Depois de decidir onde o pedido entra, veja como conduzir a resposta.</p></article>
+</div>
+</div>
+</section>
+<section class="section section-dark" id="comparativo">
+<div class="container compare-wrap">
+<div class="section-heading center light">
+<span class="eyebrow">MENOS “ACHO QUE...”</span>
+<h2>Pedido extra não precisa ser decidido no feeling</h2>
+<p>O objetivo não é dizer “não” para tudo. É saber o que você está aceitando antes de dizer “sim”.</p>
+</div>
+<div aria-label="Comparativo sem e com o kit" class="compare-table" role="table">
+<div class="compare-head muted">Sem uma forma clara de decidir</div>
+<div class="compare-head good">Com o “Isso Está Incluso?”</div>
+<div>“Acho que isso estava incluso...”</div><div>Confere o que foi combinado</div>
+<div>“É rapidinho, vou fazer”</div><div>Verifica o impacto primeiro</div>
+<div>Muda a regra conforme o cliente</div><div>Usa os mesmos critérios</div>
+<div>Percebe o extra depois de executar</div><div>Decide antes de começar</div>
+<div>Trava para responder</div><div>Já sabe qual caminho seguir</div>
+<div>Escreve toda resposta do zero</div><div>Usa uma estrutura pronta para adaptar</div>
+</div>
+</div>
+</section>
+<section class="section cta-strip">
+<div class="container cta-strip-inner">
+<div><span class="eyebrow">ANTES DO PRÓXIMO PEDIDO EXTRA</span><h2>Tenha seus critérios prontos antes de responder.</h2></div>
+<a class="btn btn-primary" href="#planos">QUERO TER O KIT PRONTO PARA CONSULTAR</a>
+</div>
+</section>
+<section class="section section-soft" id="ideal">
+<div class="container">
+<div class="section-heading center"><span class="eyebrow">FOI FEITO PARA O SEU DIA A DIA</span><h2>“Isso Está Incluso?” é ideal para você que…</h2></div>
+<div class="ideal-grid">
+<article><strong>Recebe pedidos extras</strong><p>depois de já ter combinado a entrega e tenta lembrar mentalmente até onde ia o escopo.</p></article>
+<article><strong>Algumas vezes aceita porque “parece rápido”</strong><p>e só percebe o impacto daquele pedido depois.</p></article>
+<article><strong>Trava para saber quando fazer uma cobrança extra</strong><p>sem transformar qualquer pequeno ajuste em adicional.</p></article>
+<article><strong>Quer responder com clareza</strong><p>sem soar rígido e sem começar toda conversa do zero.</p></article>
+<article><strong>Já abriu exceções para clientes atuais</strong><p>e agora sente dificuldade para separar favor, ajuste e obrigação.</p></article>
+<article><strong>Quer critérios simples e visuais</strong><p>para analisar o pedido antes de executar.</p></article>
+</div>
+</div>
+</section>
+<section class="section" id="produto">
+<div class="container product-grid">
+<div class="product-media"><img alt="Mockup do produto principal do Plano Básico" loading="lazy" src="assets/isso-esta-incluso_plano-basico.png"/></div>
+<div class="product-copy">
+<span class="eyebrow">PRODUTO PRINCIPAL</span>
+<h2>Um kit visual para ir do pedido até a resposta</h2>
+<p class="lead small">O Plano Básico reúne o material principal em páginas simples de consultar sempre que surgir um pedido extra.</p>
+<ol class="receive-list">
+<li><strong>O Que o Cliente Está Pedindo?</strong><span>Transforme uma solicitação vaga em algo que você consegue analisar.</span></li>
+<li><strong>O Que Mudou no Pedido?</strong><span>Veja se mudou formato, prazo, volume, objetivo ou tipo de trabalho.</span></li>
+<li><strong>Estava no Combinado ou Não?</strong><span>Compare o pedido com aquilo que já tinha sido acertado.</span></li>
+<li><strong>O Impacto de Dizer Sim</strong><span>Enxergue o efeito em trabalho, prazo e necessidade de nova execução.</span></li>
+<li><strong>Onde Esse Pedido Entra?</strong><span>Decida se está incluído, é exceção, deve ser cobrado como extra ou virou novo trabalho.</span></li>
+<li><strong>O Que Fazer Depois</strong><span>Veja o próximo passo para cada tipo de situação.</span></li>
+<li><strong>Como Montar Sua Resposta</strong><span>Use uma estrutura simples para conversar com o cliente.</span></li>
+<li><strong>Antes de Responder</strong><span>Uma ficha rápida para revisar a decisão antes de enviar a mensagem.</span></li>
+</ol>
+</div>
+</div>
+</section>
+<section class="section section-soft" id="bonus">
+<div class="container">
+<div class="section-heading center"><span class="eyebrow">NO PLANO COMPLETO</span><h2>Você ainda recebe 5 materiais extras</h2><p>Cada bônus resolve uma situação específica sem desviar do problema principal.</p></div>
+<div class="bonus-grid">
+<article class="bonus-card"><img alt="Bônus Só Mais Uma Coisinha" loading="lazy" src="assets/isso-esta-incluso_bonus-01_so-mais-uma-coisinha.png"/><div><span>BÔNUS 1</span><h3>Só Mais Uma Coisinha</h3><p><strong>Banco de Pedidos Extras Classificados.</strong> Consulte exemplos parecidos com os pedidos que aparecem no dia a dia.</p><div class="bonus-value">Valor: <s>R$17,90</s> <strong>GRÁTIS</strong></div></div></article>
+<article class="bonus-card"><img alt="Bônus Onde Esse Pedido Entra" loading="lazy" src="assets/isso-esta-incluso_bonus-02_onde-esse-pedido-entra.png"/><div><span>BÔNUS 2</span><h3>Onde Esse Pedido Entra?</h3><p><strong>Casos de Zona Cinzenta.</strong> Veja o que observar quando duas respostas parecem possíveis.</p><div class="bonus-value">Valor: <s>R$17,90</s> <strong>GRÁTIS</strong></div></div></article>
+<article class="bonus-card"><img alt="Bônus Antes de Começar" loading="lazy" src="assets/isso-esta-incluso_bonus-03_antes-de-comecar.png"/><div><span>BÔNUS 3</span><h3>Antes de Começar</h3><p><strong>Checklist para Evitar o “Achei que Estava Incluso”.</strong> Alinhe os pontos que mais geram confusão antes do projeto.</p><div class="bonus-value">Valor: <s>R$17,90</s> <strong>GRÁTIS</strong></div></div></article>
+<article class="bonus-card"><img alt="Bônus O Que Eu Respondo Agora" loading="lazy" src="assets/isso-esta-incluso_bonus-04_o-que-eu-respondo-agora.png"/><div><span>BÔNUS 4</span><h3>O Que Eu Respondo Agora?</h3><p><strong>Modelos de Resposta.</strong> Estruture uma resposta para cada tipo de pedido sem começar do zero.</p><div class="bonus-value">Valor: <s>R$17,90</s> <strong>GRÁTIS</strong></div></div></article>
+<article class="bonus-card"><img alt="Bônus Já Disse Sim e Agora" loading="lazy" src="assets/isso-esta-incluso_bonus-05_ja-disse-sim-e-agora.png"/><div><span>BÔNUS 5</span><h3>Já Disse Sim… E Agora?</h3><p><strong>Como Reorganizar Limites com Clientes Atuais.</strong> Ajuste expectativas quando o padrão de extras já se instalou.</p><div class="bonus-value">Valor: <s>R$17,90</s> <strong>GRÁTIS</strong></div></div></article>
+</div>
+</div>
+</section>
+<section class="section" id="planos">
+<div class="container">
+<div class="section-heading center"><span class="eyebrow">ESCOLHA SEU ACESSO</span><h2>Comece com o material principal ou leve o pacote completo</h2></div>
+<div class="plans-grid">
+<article class="plan-card">
+<div class="plan-image"><img alt="Plano Básico" loading="lazy" src="assets/isso-esta-incluso_plano-basico.png"/></div>
+<div class="plan-body">
+<span class="plan-label">PLANO BÁSICO</span>
+<h3>Produto principal completo</h3>
+<ul><li>Kit Visual “Isso Está Incluso?”</li><li>8 materiais do produto principal</li><li>PDFs para consulta digital</li><li>30 dias de garantia</li></ul>
+<div class="price"><small>pagamento único</small><strong>R$ 17,90</strong></div>
+<a class="btn btn-primary checkout-link" data-plan="basic" href="https://pay.wiapy.com/oSXQxvGVRnAk" rel="noopener noreferrer" target="_blank">QUERO O BÁSICO POR R$17,90</a>
+<p class="basic-upgrade-note"><strong>ATENÇÃO:</strong> por apenas R$10 a mais, você pode levar a versão mais vantajosa com os 5 bônus logo abaixo.</p>
+</div>
+</article>
+<article class="plan-card plan-featured">
+<div class="best-value">MELHOR CUSTO-BENEFÍCIO</div>
+<div class="plan-image"><img alt="Plano Completo" loading="lazy" src="assets/isso-esta-incluso_plano-completo.png"/></div>
+<div class="plan-body">
+<span class="plan-label">PLANO COMPLETO</span>
+<h3>Produto principal + 5 bônus</h3>
+<ul class="complete-list">
+<li>Tudo do <strong>Plano Básico</strong></li>
+<li>As <strong>8 peças centrais</strong> do Kit Visual</li>
+<li><strong>5 bônus exclusivos</strong></li>
+<li>Banco de pedidos extras classificados</li>
+<li>Casos de zona cinzenta para decidir com mais clareza</li>
+<li>Checklist preventivo antes de começar</li>
+<li>Modelos de resposta para adaptar ao cliente</li>
+<li>Material para reorganizar limites com clientes atuais</li>
+<li><strong>30 dias de garantia</strong></li>
+</ul>
+<div class="price price-complete">
+<small class="bundle-value">Valor individual dos materiais: <s>R$107,40</s></small>
+<strong class="current-price">R$ 27,90</strong>
+</div>
+<a class="btn btn-primary checkout-link" data-plan="complete" href="https://pay.wiapy.com/7_5k-axqY2th" rel="noopener noreferrer" target="_blank">QUERO TUDO POR R$27,90</a>
+</div>
+</article>
+</div>
+<p class="secure-note">🔒 Compra segura • Acesso digital após confirmação</p>
+</div>
+</section>
+<section class="section section-soft" id="garantia">
+<div class="container guarantee">
+<div aria-label="Garantia de 30 dias" class="guarantee-seal">
+<div class="guarantee-ring-text"><span>GARANTIA</span><span>COMPRA SEGURA</span></div>
+<div class="guarantee-core"><strong>30</strong><small>DIAS</small></div>
+</div>
+<div><span class="eyebrow">GARANTIA</span><h2>Você tem 30 dias para decidir</h2><p>Acesse o material, veja como ele funciona e use no seu dia a dia. Se dentro de 30 dias você entender que o <strong>“Isso Está Incluso?”</strong> não faz sentido para você, poderá solicitar o reembolso conforme as condições da compra.</p></div>
+</div>
+</section>
+<section class="section" id="acesso">
+<div class="container">
+<div class="section-heading center"><span class="eyebrow">ACESSO SIMPLES</span><h2>Como você recebe o material</h2></div>
+<div class="steps-grid">
+<article><span>1</span><h3>Faça sua compra</h3><p>Escolha o plano e conclua o pagamento pelo checkout.</p></article>
+<article><span>2</span><h3>Receba seu acesso</h3><p>Após a confirmação, você recebe as instruções de acesso.</p></article>
+<article><span>3</span><h3>Abra o material</h3><p>Produto principal e bônus ficam organizados na área de entrega.</p></article>
+<article><span>4</span><h3>Use quando precisar</h3><p>Abra o kit sempre que surgir um pedido extra do cliente.</p></article>
+</div>
+</div>
+</section>
+<section class="section section-dark" id="faq">
+<div class="container faq-wrap">
+<div class="section-heading center light"><span class="eyebrow">DÚVIDAS FREQUENTES</span><h2>Antes de comprar</h2></div>
+<div class="faq-list">
+<details><summary>Isso serve para quais tipos de prestadores de serviço?</summary><p>Foi pensado para profissionais que trabalham com entregas e escopo combinado com clientes, como designers, social medias, copywriters, editores, gestores, consultores e outros serviços semelhantes.</p></details>
+<details><summary>O material vai me dizer quanto cobrar por um adicional?</summary><p>Não. O foco é ajudar você a identificar o que o pedido é e como deve ser tratado. Precificação não é o objetivo central deste produto.</p></details>
+<details><summary>Preciso ter um contrato formal para usar?</summary><p>Não necessariamente. Você precisa ter alguma referência do que foi combinado com o cliente para comparar o novo pedido com a entrega original.</p></details>
+<details><summary>É um curso?</summary><p>Não. É um kit visual em PDF para consultar e aplicar em situações reais.</p></details>
+<details><summary>São apenas mensagens prontas?</summary><p>Não. Primeiro você entende e classifica o pedido. Depois usa os modelos de comunicação para estruturar uma resposta coerente com a situação.</p></details>
+<details><summary>E se eu já acostumei um cliente a pedir coisas extras?</summary><p>No Plano Completo, o bônus <strong>Já Disse Sim… E Agora?</strong> foi criado justamente para organizar essa situação.</p></details>
+<details><summary>Posso imprimir o material?</summary><p>O produto será entregue em formato PDF adequado para consulta digital e poderá ser preparado para impressão conforme a versão final do entregável.</p></details>
+<details><summary>Isso substitui contrato ou orientação jurídica?</summary><p>Não. É um material de organização da decisão operacional sobre pedidos, escopo e comunicação com clientes.</p></details>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container footer-inner footer-simple">
+<strong>“Isso Está Incluso?”</strong>
+<span>© 2026 • Todos os direitos reservados</span>
+<p class="footer-disclaimer">Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade sobre esta página e sobre a oferta apresentada é exclusivamente deste site. A compra deste material não garante resultados específicos. Os resultados podem variar conforme a situação e a forma de aplicação de cada pessoa.</p>
+</div>
+</footer>
+
+</body>
+</html>
